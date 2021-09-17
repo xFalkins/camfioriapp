@@ -6,5 +6,6 @@
             "database": "/home/user/projects/camfioriapp/camfioriapp.db",
             "name": "CamFioriApp SQLite"
         }
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
