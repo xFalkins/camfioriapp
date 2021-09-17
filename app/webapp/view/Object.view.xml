@@ -20,7 +20,7 @@
                         <Label text="Datum der Beantragung" width="100%" id="label_history_beantragung" design="Bold"/>
                     </Column>
                      <Column id="Ergebnis">
-                        <Label text="Ergebnis" width="100%" id="label_history_ergebnis" design="Bold"/>
+                        <Label text="Status" width="100%" id="label_history_ergebnis" design="Bold"/>
                     </Column>
                      <Column id="Mitarbeiter">
                         <Label text="Angelegt von:" width="100%" id="label_history_mitarbeiter" design="Bold"/>
