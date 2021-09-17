@@ -1,0 +1,74 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" controllerName="ns.CamFioriApp.controller.Worklist">
+
+	<semantic:SemanticPage xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" cd:w5g.dt.context="/Kreditlimit">
+
+		<semantic:titleHeading>
+			<Title text="Kreditlimitanträge"/>
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+        <IconTabBar id="iconTabBar" select="onQuickFilter" expandable="false" applyContentPadding="false">
+				<items>
+				    <IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" key="statusB_copy" count="{worklistView>/inBearbeitung}" text="Alle" id="filter3"/>
+				    <IconTabSeparator/>
+                    <IconTabFilter key="statusB" count="{worklistView>/inBearbeitung}" text="In Bearbeitung"/>
+                    <IconTabSeparator/>
+					<IconTabFilter key="statusG" count="{worklistView>/genehmigt}" text="Genehmigt"/>
+				
+					
+				</items>
+				<content>
+				    <Toolbar xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="toolbar2_1630784324799">
+				        <content>
+				            <Button xmlns="sap.m" text="Neues Kreditlimit beantragen" id="eingabeListBtn" type="Emphasized" press="gotoeingabe" class="sapUiTinyMarginEnd"/>
+				        </content>
+				        </Toolbar><Toolbar width="100%" id="toolbar2">
+					    <content>
+					        <Title xmlns="sap.m" id="tableHeader" text="Übersicht Kreditlimitanträge"/>
+					        <ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="spacer2"/>
+					        <SearchField xmlns="sap.m" id="searchField" tooltip="{i18n>worklistSearchTooltip}" search=".onSearch" width="auto">
+							</SearchField>
+					    </content>
+					</Toolbar>
+					<Table id="table" width="auto" items="{      path: '/Kreditlimit',      sorter: {       path: 'ID',       descending: false      },                     parameters: {                         expand:'sapanwender,kunde'                     }     }" noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished">
+					<headerToolbar>
+					</headerToolbar>
+
+						<columns>
+							<Column id="Name">
+								<Text id="nameTitle" text="Unternehmen"/>
+							</Column>
+							<Column id="KundenID" demandPopin="false" minScreenWidth="Tablet">
+								<Text text="Kundennummer" width="auto"/>
+							</Column>
+							<Column id="Hoehe" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Angefragtes Kreditlimit" textAlign="Left" width="auto"/>
+							</Column>
+                            <Column id="Status" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Status" textAlign="Left" width="auto"/>
+							</Column>
+							<Column id="Befristung" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Befristung"/>
+							</Column>
+							<Column id="createdAt">
+								<Text text="Datum der Beantragung"/>
+							</Column>
+						</columns>
+					<items>
+						<ColumnListItem type="Navigation" press=".onPress" cd:w5g.dt.context="/Kreditlimit">
+							<cells>
+                                <Text text="{kunde/Name}" cd:w5g.dt.context="/Kreditlimit"/>
+								<ObjectIdentifier title="{ID}" cd:w5g.dt.context="/Kreditlimit"/>
+                                <Text text="{Hoehe}" cd:w5g.dt.context="/Kreditlimit"/>
+                                <Text text="{Status}" cd:w5g.dt.context="/Kreditlimit"/>
+                                <Text text="{Befristung}" cd:w5g.dt.context="/Kreditlimit"/>
+                                <Text text="{createdAt}" cd:w5g.dt.context="/Kreditlimit"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</IconTabBar>
+		</semantic:headerContent>
+	</semantic:SemanticPage>
+</mvc:View>

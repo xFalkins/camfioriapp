@@ -1,0 +1,16 @@
+{
+  "@sapui5/generator-sapui5-templates": {
+    "promptValues": {
+      "ApplicationTitle": "Kreditlimit mit CAM",
+      "ApplicationDescription": "",
+      "FLP": false,
+      "ServiceBaseUri": "http://localhost:4004/v2/cam-fiori",
+      "DatasourceUrl": "/v2/cam-fiori",
+      "ObjectCollection": "Kreditlimit",
+      "ObjectCollection_Key": "ID",
+      "Object_Identifier": "ID",
+      "Object_Number": "",
+      "Object_UnitOfMeasure": ""
+    }
+  }
+}

@@ -1,0 +1,36 @@
+GET http://localhost:4004/cam-fiori/Kunde
+
+###
+GET http://localhost:4004/cam-fiori/Kreditlimit?$expand=kunde
+
+###
+POST http://localhost:4004/cam-fiori/Kreditlimit
+Content-Type: application/json
+
+{
+    "ID":10,
+    "Befristung":"2024-04-12",
+    "Hoehe":50000,
+    "Bemerkung":"",
+    "Status":"Genehmigt",
+    "sapanwender_ID":4,
+    "kunde_ID":10
+}
+
+###
+DELETE http://localhost:4004/cam-fiori/Kreditlimit/126 HTTP/1.1
+
+###
+POST http://localhost:4004/cam-fiori/SapAnwender
+Content-Type: application/json
+
+{"ID": 5,
+"Vorname": "Luis Marcelo",
+"Nachname":"Diaz Ludena",
+"Rolle": "Mitarbeiter"
+}
+###
+POST http://localhost:4004/cam-fiori/Test
+Content-Type: application/json
+
+{"ID":2, "name": "Primer nombre", "sapanwender_ID":2 }

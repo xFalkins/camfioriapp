@@ -1,0 +1,141 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="ns.CamFioriApp.controller.Eingabemaske" displayBlock="true"><Page xmlns="sap.m" id="pageId" title="Neues Kreditlimit beantragen" floatingFooter="true" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/Kreditlimit">
+
+    
+
+    <footer>
+
+    
+
+        <OverflowToolbar id="toolbar1">
+
+    
+
+            <Button xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" press="onNavBack" type="Back" text="Zurück" id="buttonBack"/>
+
+    
+
+            <Button xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" type="Emphasized" text="Antrag abschicken" id="buttonAbschicken"/>
+
+    
+
+            </OverflowToolbar>
+
+    
+
+        
+
+    
+
+    </footer>
+
+    
+
+    <content>
+
+    
+
+        <Label width="100%" id="label4"/>
+
+    
+
+        <Label text="* Pflichtfelder:" width="20%" id="label3" textAlign="End" design="Bold"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy3"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy12"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" text="* Kunde:" width="20%" id="label3_copy" textAlign="End"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy4"/>
+
+    
+
+        <Input xmlns="sap.m" id="input0" width="40%"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy2"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" text="* Kundennummer:" width="20%" id="label3_copy2" textAlign="End"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy5"/>
+
+    
+
+        <Input xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="input0_copy" width="40%"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy6"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" text="*Limithöhe:" width="20%" id="label3_copy3" textAlign="End"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy7"/>
+
+    
+
+        <Input xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="input0_copy2" width="40%"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy8"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" text="*Befristung:" width="20%" id="label3_copy4" textAlign="End"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy9"/>
+
+    
+
+        <DatePicker xmlns="sap.m" id="picker0" width="40%"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="100%" id="label4_copy10"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" text="Bemerkung:" width="20%" id="label3_copy5" textAlign="End"/>
+
+    
+
+        <Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" width="5%" id="label4_copy11"/>
+
+    
+
+        <TextArea xmlns="sap.m" rows="4" id="area0" cols="37"/>
+
+    
+
+    </content>
+
+    
+
+    </Page>
+
+    
+
+</mvc:View>

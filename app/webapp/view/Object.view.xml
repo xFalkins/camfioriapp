@@ -1,0 +1,82 @@
+<mvc:View controllerName="ns.CamFioriApp.controller.Object" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" cd:w5g.dt.context="/Kreditlimit" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
+
+		<semantic:titleHeading>
+			<Title text="Kreditlimitanträge" level="H2" id="title_header"/>
+		</semantic:titleHeading>
+		
+        <semantic:headerContent>
+             <FlexBox width="100%" id="box_Titel" direction="Column">
+                <Title id="title_Name" text="{kunde/Name}" cd:w5q.dt.context="/Kreditlimit" titleStyle="H1"/> 
+                <Title id="title_ID" text="{kunde/ID}" cd:w5q.dt.context="/Kreditlimit" titleStyle="H2"/>
+            </FlexBox>
+            <ObjectNumber/>
+            <Table id="Table_Daten" growingThreshold="0" showSeparators="None" enableBusyIndicator="false" keyboardMode="Edit" modeAnimationOn="false" rememberSelections="false">
+                <columns>
+                    <Column id="History_Hoehe">
+                        <Text text="Kreditlimithöhe:" width="100%" id="label_hoehe"/>
+                    </Column>
+                     <Column id="History_Befristung">
+                        <Text text="Gültig bis:" width="100%" id="label_befristung"/>
+                    </Column>
+                     <Column id="History_Rating" popinDisplay="Inline">
+                        <Text text="Kundenrating:" width="100%" id="label_rating"/>
+                    </Column>
+                     <Column id="History_Mitarbeiter">
+                        <Text text="Angelegt von:" width="100%" id="label_mitarbeiter"/>
+                    </Column>
+                </columns>
+                <items>
+					<ColumnListItem cd:w5g.dt.context="/Kreditlimit">
+						<cells>
+                            <Text id="history_hoehe" text="{Hoehe}€" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text id="history_befristung" text="{Befristung}" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text id="history_rating" text="{kunde/Rating}" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text id="history_name" text="{sapanwender/Vorname} {sapanwender/Nachname}" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+            </Table>
+            <ObjectNumber/>
+            <Label text="Bemerkung:" width="100%" id="label_bemerkung" design="Bold"/>
+            <FlexBox width="100%" id="box_Bemerkung" alignContent="Start" renderType="Bare" justifyContent="SpaceBetween">
+                <TextArea id="bemerkung" value="{Bemerkung}" width="100%" cd:w5g.dt.context="/Kreditlimit" blocked="true"/>
+            </FlexBox>
+            <ObjectNumber/>
+            <Table id="Table_H" width="80%" items="{      path: '/Kreditlimit',      sorter: {       path: 'ID',       descending: false      },                     parameters: {                         expand:'sapanwender,kunde'                     }     }" noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished" includeItemInSelection="true" growingThreshold="5" headerText="Historie">
+                <columns>
+                    <Column id="Hoehe" demandPopin="true">
+                        <Label text="Kreditlimithöhe" width="100%" id="label_history_hoehe" design="Bold"/>
+                    </Column>
+                     <Column id="Beantragung">
+                        <Label text="Datum der Beantragung" width="100%" id="label_history_beantragung" design="Bold"/>
+                    </Column>
+                     <Column id="Ergebnis">
+                        <Label text="Ergebnis" width="100%" id="label_history_ergebnis" design="Bold"/>
+                    </Column>
+                     <Column id="Mitarbeiter">
+                        <Label text="Angelegt von:" width="100%" id="label_history_mitarbeiter" design="Bold"/>
+                    </Column>
+                </columns>
+                <items>
+					<ColumnListItem cd:w5g.dt.context="/Kreditlimit">
+						<cells>
+                            <Text id="hoehe" text="{Hoehe}€" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text text="{createdAt}" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text text="{Status}" cd:w5g.dt.context="/Kreditlimit"/>
+                            <Text id="vorname" text="{sapanwender/Vorname} {sapanwender/Nachname}" width="100%" cd:w5g.dt.context="/Kreditlimit"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+            </Table>
+            <ObjectNumber/>
+            <Button id="Button_Kreditlimit" text="Neues Kreditlimit beantragen" press="gotoeingabe"/>
+            <Button id="Button_Zurueck" text="Zurück" press="onNavBack"/>
+		</semantic:headerContent>
+
+        <semantic:content>
+           <!-- Test 123 -->
+    	</semantic:content>
+	</semantic:SemanticPage>
+
+</mvc:View>
