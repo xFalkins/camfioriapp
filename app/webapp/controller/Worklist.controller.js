@@ -50,7 +50,7 @@ sap.ui.define([
 
             this._mFilters = {
                 "statusB": [new sap.ui.model.Filter("Status", "EQ", "In Bearbeitung")],
-                "statusG": [new sap.ui.model.Filter("UnitsInStock", "EQ", "Genehmigt")],
+                "statusG": [new sap.ui.model.Filter("Status", "EQ", "Genehmigt")],
                 "all": []
             };
 
