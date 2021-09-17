@@ -70,8 +70,8 @@
 				</items>
             </Table>
             <ObjectNumber/>
+            <Button id="Button_Zurueck" text="Zurück" type="Back" press="onNavBack"/> 
             <Button id="Button_Kreditlimit" text="Neues Kreditlimit beantragen" press="gotoeingabe"/>
-            <Button id="Button_Zurueck" text="Zurück" press="onNavBack"/>
 		</semantic:headerContent>
 	</semantic:SemanticPage>
 
